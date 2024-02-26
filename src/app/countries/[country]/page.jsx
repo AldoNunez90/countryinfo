@@ -6,30 +6,30 @@ import UniqueCard from "@/components/assets/uniqueCard";
 import { useParams, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
-const countryinfo = () => {
-  const params = useParams();
-  const URL = `https://restcountries.com/v3.1/name/${params.country}`;
-  const [data, setData] = useState([]);
-  const router = useRouter();
+const Countryinfo = () => {
+  const useParams = useParams();
+  const URL = `https://restcountries.com/v3.1/name/${useParams.country}`;
+  const [Data, SetData] = useState([]);
+  const Router = useRouter();
 
   useEffect(() => {
-    document.title = `Countries | ${params.country}`;
+    document.title = `Countries | ${useParams.country}`;
     fetch(URL)
       .then((response) => response.json())
       .then((data) => {
-        setData(data);
+        SetData(data);
       });
-  }, []);
+  }, [URL]);
 
   const goBack = () => {
-    router.back();
+    Router.back();
   };
 
   return (
     <Layout>
       <div>
       
-        {data.length === 0 ? (
+        {Data.length === 0 ? (
           
           <Loader />
         ) : (
@@ -38,7 +38,7 @@ const countryinfo = () => {
       <b>← Back</b>
             </button>
             <section>
-              {data.map((country, index) => (
+              {Data.map((country, index) => (
                 <UniqueCard key={index} {...country} />
               ))}
             </section>
@@ -49,4 +49,4 @@ const countryinfo = () => {
   );
 };
 
-export default countryinfo;
+export default Countryinfo;

@@ -188,6 +188,7 @@ h3{
 
 .select{
   display: flex;
+  align-items: center;
 }
 
 .moon{

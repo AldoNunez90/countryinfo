@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const UniqueCard = ({
   flags,
   name,
@@ -13,7 +15,8 @@ const UniqueCard = ({
   return (
     <div className="uniqueContainer">
       <div className="flagContainer">
-        <img src={flags.png} alt="flag" className="uniqueFlag" />
+        <Image src={flags.svg} alt="flag" className="uniqueFlag" width={128} height={320} />
+       
       </div>
       
       <div>

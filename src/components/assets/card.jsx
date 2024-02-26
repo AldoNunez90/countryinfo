@@ -1,11 +1,12 @@
 'use client'
 import Link from "next/link";
+import Image from "next/image";
 
 const Cards = (country) => {
     return ( <li className="cardContainer" id={country.country.ccn3} >
         <div className="titleCard">
        <Link href={`countries/${country.country.name.common}`}>
-        <img src={country.country.flags.svg} alt={country.country.name.officia} className="flags"/>
+        <Image  src={country.country.flags.svg} alt={country.country.name.officia} className="flags" width={24} height={24}/>
         </Link>
         </div>
         <div>
