@@ -7,29 +7,29 @@ import { useParams, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
 const Countryinfo = () => {
-  const useParams = useParams();
+  const params = useParams();
   const URL = `https://restcountries.com/v3.1/name/${useParams.country}`;
-  const [Data, SetData] = useState([]);
-  const Router = useRouter();
+  const [data, setData] = useState([]);
+  const router = useRouter();
 
   useEffect(() => {
-    document.title = `Countries | ${useParams.country}`;
+    document.title = `Countries | ${params.country}`;
     fetch(URL)
       .then((response) => response.json())
       .then((data) => {
-        SetData(data);
+        setData(data);
       });
   }, [URL]);
 
   const goBack = () => {
-    Router.back();
+    router.back();
   };
 
   return (
     <Layout>
       <div>
       
-        {Data.length === 0 ? (
+        {data.length === 0 ? (
           
           <Loader />
         ) : (
@@ -38,7 +38,7 @@ const Countryinfo = () => {
       <b>← Back</b>
             </button>
             <section>
-              {Data.map((country, index) => (
+              {data.map((country, index) => (
                 <UniqueCard key={index} {...country} />
               ))}
             </section>
