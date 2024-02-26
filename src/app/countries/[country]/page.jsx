@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 
 const Countryinfo = () => {
   const params = useParams();
-  const URL = `https://restcountries.com/v3.1/name/${useParams.country}`;
+  const URL = `https://restcountries.com/v3.1/name/${params.country}`;
   const [data, setData] = useState([]);
   const router = useRouter();
 
@@ -24,7 +24,7 @@ const Countryinfo = () => {
   const goBack = () => {
     router.back();
   };
-
+console.log(data)
   return (
     <Layout>
       <div>
