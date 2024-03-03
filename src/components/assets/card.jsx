@@ -3,10 +3,10 @@ import Link from "next/link";
 import Image from "next/image";
 
 const Cards = (country) => {
-    return ( <li className="cardContainer" id={country.country.ccn3} >
+    return ( <li className="cardContainer bg-black dark:bg-white " id={country.country.ccn3} >
         <div className="titleCard">
        <Link href={`countries/${country.country.name.common}`}>
-        <Image  src={country.country.flags.svg} alt={country.country.name.officia} className="flags" width={24} height={24}/>
+        <Image  src={country.country.flags.svg} alt="flag" className="flags" width={24} height={24} priority/>
         </Link>
         </div>
         <div>

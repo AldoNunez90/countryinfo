@@ -24,18 +24,16 @@ const Countryinfo = () => {
   const goBack = () => {
     router.back();
   };
-console.log(data)
+  console.log(data);
   return (
     <Layout>
       <div>
-      
         {data.length === 0 ? (
-          
           <Loader />
         ) : (
           <>
-          <button className="btn-simple back" onClick={goBack} >
-      <b>← Back</b>
+            <button className="btn-simple back" onClick={goBack}>
+              <b>← Back</b>
             </button>
             <section>
               {data.map((country, index) => (

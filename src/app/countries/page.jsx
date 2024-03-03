@@ -3,7 +3,6 @@ import { useState, useEffect } from "react";
 import Cards from "../../components/assets/card";
 import SearchComponent from "../../components/SearchComponent";
 import FilterComponent from "../../components/FilterComponent";
-import Link from "next/link";
 import Layout from "@/components/Layout";
 
 const Countries = () => {
